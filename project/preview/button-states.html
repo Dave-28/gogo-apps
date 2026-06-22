@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Button states" subtitle="Rest / hover / pressed / focus / disabled" viewport="700x150" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: #FAF6F9; }
+  body { padding: 28px; display:flex; align-items:center; gap: 14px; flex-wrap: wrap }
+  .btn { font-family: var(--font-display); font-weight: 700; font-size: 14px; border-radius: 999px; border: 0; padding: 12px 20px; cursor: pointer; transition: all var(--dur-base) var(--ease-out); }
+  .btn-rest    { background: var(--gogo-electric-rose); color: #fff; }
+  .btn-hover   { background: #B40769; color: #fff; box-shadow: var(--shadow-2); transform: translateY(-1px) }
+  .btn-pressed { background: #8E0552; color: #fff; transform: scale(.99) }
+  .btn-focus   { background: var(--gogo-electric-rose); color: #fff; box-shadow: 0 0 0 3px rgba(210,12,125,0.35) }
+  .btn-disabled{ background: var(--gogo-electric-rose); color: #fff; opacity: .4; cursor: not-allowed }
+  .lbl { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-muted); display:block; margin-top: 6px; text-align:center; font-weight: 700 }
+  .group { display:flex; flex-direction:column; align-items:center }
+</style>
+</head>
+<body>
+  <div class="group"><button class="btn btn-rest">Swap now</button><span class="lbl">Rest</span></div>
+  <div class="group"><button class="btn btn-hover">Swap now</button><span class="lbl">Hover</span></div>
+  <div class="group"><button class="btn btn-pressed">Swap now</button><span class="lbl">Pressed</span></div>
+  <div class="group"><button class="btn btn-focus">Swap now</button><span class="lbl">Focus</span></div>
+  <div class="group"><button class="btn btn-disabled">Swap now</button><span class="lbl">Disabled</span></div>
+</body></html>

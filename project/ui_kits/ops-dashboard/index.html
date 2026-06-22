@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- @dsCard group="UI Kit — Ops Dashboard" name="Ops Dashboard — Overview" subtitle="KPIs, station table, activity feed" viewport="1440x900" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GOGO Ops — Overview</title>
+<link rel="stylesheet" href="ops.css">
+</head>
+<body>
+<div class="app" data-screen-label="Ops / Overview">
+  <aside class="side">
+    <div class="logo"><img src="../../assets/logo-inverse.png" alt="GOGO"></div>
+    <div class="group">Operations</div>
+    <a class="on" href="index.html"><span class="ico">▦</span>Overview</a>
+    <a href="stations.html"><span class="ico">⚡</span>Stations</a>
+    <a href="#"><span class="ico">🛵</span>Fleet</a>
+    <a href="riders.html"><span class="ico">👤</span>Riders</a>
+    <div class="group">Finance</div>
+    <a href="#"><span class="ico">💳</span>Billing</a>
+    <a href="#"><span class="ico">📊</span>Reports</a>
+    <div class="group">Admin</div>
+    <a href="#"><span class="ico">⚙</span>Settings</a>
+    <div class="user">
+      <div class="av">AK</div>
+      <div><div class="name">Aisha K.</div><div class="role">Ops Manager · Kampala</div></div>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="head">
+      <div>
+        <span class="eyebrow" style="color:var(--gogo-electric-rose);font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase">Tuesday · 11 May</span>
+        <h1>Operations overview</h1>
+        <div class="sub">Across 24 stations · live for the last 24h</div>
+      </div>
+      <div class="actions">
+        <button class="btn btn-ghost">Export CSV</button>
+        <button class="btn btn-primary">+ Add station</button>
+      </div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="lbl">Active riders</div><div class="v">1,312</div><div class="delta">▲ 4.2% week</div></div>
+      <div class="kpi"><div class="lbl">Swaps today</div><div class="v">3,847</div><div class="delta">▲ 11% vs avg</div></div>
+      <div class="kpi"><div class="lbl">Stations online</div><div class="v">22<small style="font-size:18px;color:var(--fg-muted);font-weight:700">/24</small></div><div class="delta down">▼ 2 offline</div></div>
+      <div class="kpi"><div class="lbl">Revenue (UGX)</div><div class="v">23.1M</div><div class="delta">▲ 6.8% week</div></div>
+    </div>
+
+    <div class="stack-2">
+      <div class="panel">
+        <div class="panel-head"><h2>Stations</h2>
+          <div style="display:flex; gap: 8px">
+            <span class="pill ok">22 online</span>
+            <span class="pill low">3 low stock</span>
+            <span class="pill off">2 offline</span>
+          </div>
+        </div>
+        <div class="panel-body">
+          <table>
+            <thead><tr><th>Station</th><th>Stock</th><th>Swaps / hr</th><th>Last swap</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Kabalagala</strong><div style="color:var(--fg-muted);font-size:12px">ST-014 · Kampala</div></td><td>14 / 20</td><td>18.4</td><td>2 min ago</td><td><span class="pill ok">Online</span></td></tr>
+              <tr><td><strong>Ntinda Road</strong><div style="color:var(--fg-muted);font-size:12px">ST-022 · Kampala</div></td><td>3 / 20</td><td>22.1</td><td>1 min ago</td><td><span class="pill low">Low</span></td></tr>
+              <tr><td><strong>Nakawa Market</strong><div style="color:var(--fg-muted);font-size:12px">ST-009 · Kampala</div></td><td>11 / 20</td><td>14.8</td><td>4 min ago</td><td><span class="pill ok">Online</span></td></tr>
+              <tr><td><strong>Jinja Town</strong><div style="color:var(--fg-muted);font-size:12px">ST-031 · Jinja</div></td><td>—</td><td>0</td><td>2h 11m ago</td><td><span class="pill off">Offline</span></td></tr>
+              <tr><td><strong>Mukono Hub</strong><div style="color:var(--fg-muted);font-size:12px">ST-018 · Mukono</div></td><td>8 / 12</td><td>9.2</td><td>5 min ago</td><td><span class="pill ok">Online</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><h2>Activity</h2></div>
+        <div class="panel-body">
+          <div class="event"><div class="dot"></div><div><div class="title">Jinja Town went offline</div><div class="time">2h 11m ago · technician dispatched</div></div></div>
+          <div class="event"><div class="dot" style="background:var(--gogo-buzzing-yellow)"></div><div><div class="title">Ntinda Road below 5 batteries</div><div class="time">38 min ago</div></div></div>
+          <div class="event"><div class="dot" style="background:#1F8A4C"></div><div><div class="title">Battery B-4128 returned to circulation</div><div class="time">1h ago · Kabalagala</div></div></div>
+          <div class="event"><div class="dot" style="background:#1F8A4C"></div><div><div class="title">14 new riders onboarded</div><div class="time">Today · Kampala region</div></div></div>
+          <div class="event"><div class="dot"></div><div><div class="title">Quarterly safety check due</div><div class="time">3 stations · this week</div></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body></html>

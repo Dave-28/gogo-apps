@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- @dsCard group="UI Kit — Rider App" name="Rider App — Reserve" subtitle="Battery picker + total" viewport="390x920" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GOGO Rider — Reserve a swap</title>
+<link rel="stylesheet" href="rider.css">
+<style>
+  .hero { padding: 4px 24px 20px; }
+  .back { width: 36px; height: 36px; border-radius: 50%; background: var(--gogo-ink-100); display:flex; align-items:center; justify-content:center; color: var(--fg); text-decoration:none; margin-bottom: 14px }
+  h1 { font-family: var(--font-display); font-weight: 700; font-size: 30px; line-height: 1.05; letter-spacing: -0.018em; margin: 0 0 6px }
+  .sub { color: var(--fg-muted); font-size: 14px }
+  .body-content { padding: 0 24px 24px; flex: 1; }
+  .row { display:flex; justify-content:space-between; padding: 14px 0; border-top: 1px solid var(--border-subtle); font-size: 14px }
+  .row:first-of-type { border-top: 0 }
+  .row .l { color: var(--fg-muted) }
+  .row .v { font-family: var(--font-display); font-weight: 600; color: var(--fg) }
+  .picker { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px }
+  .opt { padding: 14px; border-radius: 12px; border: 2px solid var(--border); cursor: pointer; }
+  .opt.on { border-color: var(--gogo-electric-rose); background: rgba(210,12,125,.04) }
+  .opt .top { font-family: var(--font-display); font-weight: 700; font-size: 15px }
+  .opt .b { color: var(--fg-muted); font-size: 12px; margin-top: 2px }
+  .total-card { background: var(--gogo-purple-eclipse); color:#fff; padding: 18px; border-radius: 16px; margin: 20px 0 16px; display:flex; justify-content:space-between; align-items:center }
+  .total-card .lbl { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.65); font-weight:700 }
+  .total-card .v { font-family: var(--font-display); font-weight: 900; font-size: 32px; letter-spacing: -0.01em }
+</style>
+</head>
+<body>
+<div class="phone" data-screen-label="Swap / Reserve">
+  <div class="status-bar"><span>9:42</span></div>
+  <div class="hero">
+    <a class="back" href="home-map.html">←</a>
+    <span class="eyebrow">Kabalagala · 1.2 km</span>
+    <h1>Reserve a fresh battery</h1>
+    <div class="sub">Held for 15 minutes. Pay on swap.</div>
+  </div>
+  <div class="body-content">
+    <div class="card" style="padding:18px">
+      <div class="row"><span class="l">Station</span><span class="v">Kabalagala</span></div>
+      <div class="row"><span class="l">Available now</span><span class="v">14 batteries</span></div>
+      <div class="row"><span class="l">Open until</span><span class="v">22:00</span></div>
+    </div>
+
+    <span class="eyebrow" style="display:block; margin-top:22px">Battery</span>
+    <div class="picker">
+      <div class="opt on">
+        <div class="top">72 V · 40 Ah</div>
+        <div class="b">E-Boda standard</div>
+      </div>
+      <div class="opt">
+        <div class="top">72 V · 60 Ah</div>
+        <div class="b">+ UGX 500</div>
+      </div>
+    </div>
+
+    <div class="total-card">
+      <div>
+        <div class="lbl">Total</div>
+        <div class="v">UGX 6,000</div>
+      </div>
+      <div style="text-align:right;font-size:12px;color:rgba(255,255,255,.7);max-width:120px">
+        Held 15 min<br>after reservation
+      </div>
+    </div>
+
+    <a class="btn btn-primary" href="swap-confirm.html">Reserve now</a>
+    <a class="btn btn-ghost" href="home-map.html" style="margin-top:10px">Back to map</a>
+  </div>
+</div>
+</body></html>

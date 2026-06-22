@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Brand" name="Brand devices" subtitle="Bolt · Bolt Pin · EV Bike" viewport="700x220" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  body { padding: 22px 28px; display:flex; gap: 28px; align-items:center; flex-wrap:wrap }
+  .device { display:flex; flex-direction:column; align-items:center; gap: 10px; }
+  .device .pad { width: 120px; height: 120px; display:flex; align-items:center; justify-content:center; background: var(--bg-subtle); border-radius: 14px; }
+  .device .pad.dark { background: var(--gogo-purple-eclipse) }
+  .lbl { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-muted); font-weight: 700 }
+  .role { font-size: 12px; color: var(--fg); margin-top: -4px }
+  .bolt { width: 48px; color: var(--gogo-purple-eclipse) }
+  .pin  { width: 72px }
+  .bike { width: 100px; height: auto; }
+</style>
+</head>
+<body>
+  <div class="device">
+    <div class="pad"><svg class="bolt" viewBox="0 0 24 32" fill="currentColor"><path d="M14.4 0 0 17.6h8.8L6.4 32 24 12.8h-9.6L17.6 0z"/></svg></div>
+    <span class="lbl">Bolt</span>
+    <span class="role">Signature glyph</span>
+  </div>
+  <div class="device">
+    <div class="pad"><img class="pin" src="../assets/bolt-pin.svg" alt=""></div>
+    <span class="lbl">Bolt Pin</span>
+    <span class="role">Map · station marker</span>
+  </div>
+  <div class="device">
+    <div class="pad" style="background:#fff"><img class="bike" src="../assets/ev-bike-full-colour.png" alt=""></div>
+    <span class="lbl">EV Bike</span>
+    <span class="role">Vehicle device</span>
+  </div>
+</body></html>

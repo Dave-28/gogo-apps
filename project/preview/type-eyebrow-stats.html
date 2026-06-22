@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Type" name="Type — Eyebrow & Stats" subtitle="Eyebrows in Electric Rose, hero numerals" viewport="700x180" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  body { padding: 28px; display:flex; align-items:center; gap: 40px; flex-wrap:wrap }
+  .eyebrow { color: var(--gogo-electric-rose); font-weight:700; text-transform:uppercase; letter-spacing:.16em; font-size:12px }
+  .stack > * + * { margin-top: 8px; }
+  .spec { font-size: 11px; color: var(--fg-subtle); font-family: var(--font-mono); }
+  .num  { font-family: var(--font-display); font-weight:900; font-size: 56px; line-height:1; letter-spacing:-0.02em; color: var(--fg); }
+  .num small { font-size: 18px; font-weight:600; color: var(--fg-muted); letter-spacing:0; }
+</style>
+</head>
+<body>
+  <div class="stack">
+    <div class="eyebrow">Eyebrow / Tag</div>
+    <div class="spec">Bold · 12px · +16% tracking · ALL CAPS · Electric Rose</div>
+  </div>
+  <div class="stack">
+    <div class="num">1,300<small> riders</small></div>
+    <div class="spec">Stat numeral · Black · 56px · tabular numerals</div>
+  </div>
+  <div class="stack">
+    <div class="num" style="color: var(--gogo-electric-rose)">90<small style="color:var(--gogo-electric-rose)">s</small></div>
+    <div class="spec">Hero stat in Electric Rose</div>
+  </div>
+</body></html>

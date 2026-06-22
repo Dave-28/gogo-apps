@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Form fields" subtitle="Inputs, chips, selects with error + focus" viewport="700x260" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  body { padding: 24px 28px; display:grid; grid-template-columns: 1fr 1fr; gap: 18px 24px; }
+  label { display:flex; flex-direction:column; gap: 6px; font-size: 12px; color: var(--fg-muted); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+  input, select { font-family: var(--font-body); font-size: 15px; color: var(--fg); padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); background: #fff; outline: none; transition: all var(--dur-base) var(--ease-out); }
+  input:focus { border-color: var(--gogo-electric-rose); box-shadow: 0 0 0 3px rgba(210,12,125,0.18); }
+  .field-error input { border-color: var(--danger) }
+  .hint { font-size: 12px; color: var(--fg-muted); font-weight: 400; text-transform: none; letter-spacing: 0 }
+  .err { font-size: 12px; color: var(--danger); font-weight: 600; text-transform: none; letter-spacing: 0 }
+  .chip-row { display:flex; gap: 6px; flex-wrap: wrap; }
+  .chip { font-family: var(--font-display); font-weight: 600; font-size: 13px; padding: 6px 12px; border-radius: 999px; background: var(--gogo-ink-100); color: var(--fg) }
+  .chip.on { background: var(--gogo-purple-eclipse); color: #fff }
+</style>
+</head>
+<body>
+  <label>Phone number
+    <input type="text" value="+256 712 345 678">
+    <span class="hint">We'll send a code to confirm.</span>
+  </label>
+  <label class="field-error">PIN
+    <input type="password" value="••••">
+    <span class="err">PIN must be 4 digits.</span>
+  </label>
+  <label>Filter by station
+    <div class="chip-row" style="margin-top: 2px">
+      <span class="chip on">All</span>
+      <span class="chip">Available</span>
+      <span class="chip">Low stock</span>
+      <span class="chip">Offline</span>
+    </div>
+  </label>
+  <label>Battery size
+    <select><option>72V · 40 Ah (E-Boda)</option><option>96V · 60 Ah (E-Trak)</option></select>
+  </label>
+</body></html>

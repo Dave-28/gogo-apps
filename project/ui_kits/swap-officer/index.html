@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- @dsCard group="UI Kit — Swap Officer" name="Swap Officer App" subtitle="Staff app — bay status, verify swap, shift end" viewport="1300x800" -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GOGO · Swap Officer App</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="../kit.css">
+<style>
+  /* desktop-web overrides — these screens are 1280×800, not mobile */
+  .frames.web {
+    grid-template-columns: 1fr;
+    max-width: 1240px;
+    gap: 56px 0;
+  }
+  .frame-wrap.web {
+    width: 100%;
+    align-items: stretch;
+  }
+  .web-scale {
+    width: 1240px;
+    height: calc(800px * (1240 / 1280));
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+    border: 1px solid #1B233A;
+    background: #05070F;
+  }
+  .web-scale > div {
+    transform: scale(0.96875); /* 1240/1280 */
+    transform-origin: top left;
+  }
+  .frame-label.web {
+    align-self: flex-start;
+    margin-bottom: 4px;
+  }
+  .web-note {
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 11px; color: var(--fg-3);
+    margin-top: 8px; align-self: flex-start;
+  }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <a href="../index.html" class="kit-back">← All apps</a>
+
+  <div class="kit-header">
+    <div>
+      <div class="kit-eyebrow">05 · STAFF</div>
+      <h1 class="kit-title">SWAP OFFICER<br/>WEB APP</h1>
+      <p class="kit-sub">The station-floor tool. Runs in any browser at the swap counter. Officers select an action, scan an asset, and close swaps against the rider's wallet.</p>
+    </div>
+    <div class="kit-meta">
+      <div><strong>3 screens</strong></div>
+      <div>Web · 1280×800</div>
+      <div>dark · navy + magenta</div>
+    </div>
+  </div>
+
+  <div class="frames web" id="root"></div>
+
+  <script type="text/babel" src="./dark-components.jsx"></script>
+  <script type="text/babel" src="./screens.jsx"></script>
+  <script type="text/babel">
+    function Kit() {
+      const frames = [
+        { num: '01', label: 'Home — action library',
+          note: 'Swap officer lands here at start of shift. Nine actions, sidebar nav for power-users.',
+          el: <HomeScreen/> },
+        { num: '02', label: 'Close Battery Swap — Scan Asset',
+          note: 'Step 1 of 5 in the close-swap flow. QR scan with manual-entry fallback.',
+          el: <CloseSwapScreen/> },
+        { num: '03', label: 'My Pending Swaps',
+          note: 'Open swaps the officer must reconcile before end of shift. Warns on negative wallet balance.',
+          el: <PendingSwapsScreen/> },
+      ];
+      return frames.map((f, i) => (
+        <div className="frame-wrap web" key={i}>
+          <div className="frame-label web"><span className="frame-num">{f.num}</span>{f.label}</div>
+          <div className="web-scale"><div><f.el.type/></div></div>
+          <div className="web-note">{f.note}</div>
+        </div>
+      ));
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<Kit/>);
+  </script>
+</body>
+</html>

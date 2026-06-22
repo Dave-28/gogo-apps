@@ -1,0 +1,60 @@
+/* shared/kit.css — shared styles for every UI kit index page */
+body { margin: 0; padding: 56px 32px; background: var(--aub-50); }
+.kit-header {
+  max-width: 1240px; margin: 0 auto 36px;
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 32px;
+}
+.kit-title {
+  font-family: var(--font-display); font-variation-settings: 'wght' 800, 'wdth' 110;
+  font-weight: 800; font-size: 56px; color: var(--gogo-aubergine);
+  text-transform: uppercase; letter-spacing: -0.03em; line-height: 0.95; margin: 0;
+}
+.kit-eyebrow {
+  font-family: var(--font-body); font-size: 11px; font-weight: 700;
+  color: var(--gogo-magenta); text-transform: uppercase; letter-spacing: 0.14em;
+  margin-bottom: 12px;
+}
+.kit-sub {
+  font-family: var(--font-body); font-size: 14px; color: var(--fg-2);
+  max-width: 380px; line-height: 1.5; margin-top: 12px;
+}
+.kit-meta {
+  font-family: var(--font-mono); font-size: 12px; color: var(--fg-3);
+  text-align: right; line-height: 1.6;
+}
+.kit-meta strong { color: var(--gogo-magenta); font-weight: 700; }
+.kit-back {
+  position: fixed; top: 24px; left: 24px;
+  background: var(--gogo-white); border: 1px solid var(--border-hairline);
+  border-radius: 999px; padding: 8px 14px;
+  font-family: var(--font-body); font-size: 12px; font-weight: 600; color: var(--gogo-aubergine);
+  text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+  box-shadow: 0 2px 8px rgba(64,16,60,0.06);
+  z-index: 10;
+}
+.kit-back:hover { background: var(--aub-50); }
+.frames {
+  max-width: 1240px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 28px;
+  justify-items: center;
+}
+.frames.cols-2 { grid-template-columns: repeat(2, 1fr); max-width: 900px; }
+.frame-wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.frame-scale {
+  width: calc(402px * 0.62);
+  height: calc(874px * 0.62);
+  overflow: hidden;
+}
+.frame-scale > div {
+  transform: scale(0.62);
+  transform-origin: top left;
+}
+.frame-label {
+  font-family: var(--font-body); font-size: 11px; font-weight: 700;
+  color: var(--gogo-aubergine); text-transform: uppercase; letter-spacing: 0.10em;
+  display: flex; align-items: center; gap: 8px;
+}
+.frame-num {
+  font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+  color: var(--gogo-magenta); letter-spacing: 0.04em;
+}

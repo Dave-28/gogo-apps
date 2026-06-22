@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- @dsCard group="UI Kit — App" name="App UI Kit" subtitle="6 rider screens — welcome, home, stations, live swap, history, wallet" viewport="1300x1380" -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GOGO · App UI Kit</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  body { margin: 0; padding: 56px 32px; background: var(--aub-50); }
+  .kit-header {
+    max-width: 1240px; margin: 0 auto 36px;
+    display: flex; align-items: flex-end; justify-content: space-between; gap: 32px;
+  }
+  .kit-title {
+    font-family: var(--font-display); font-variation-settings: 'wght' 800, 'wdth' 110;
+    font-weight: 800; font-size: 56px; color: var(--gogo-aubergine);
+    text-transform: uppercase; letter-spacing: -0.03em; line-height: 0.95;
+    margin: 0;
+  }
+  .kit-sub {
+    font-family: var(--font-body); font-size: 14px; color: var(--fg-2);
+    max-width: 320px; line-height: 1.5; margin-top: 12px;
+  }
+  .kit-meta {
+    font-family: var(--font-mono); font-size: 12px; color: var(--fg-3);
+    text-align: right; line-height: 1.6;
+  }
+  .kit-meta strong { color: var(--gogo-magenta); font-weight: 700; }
+  .frames {
+    max-width: 1240px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 28px;
+    justify-items: center;
+  }
+  .frame-wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .frame-scale {
+    width: calc(402px * 0.62);
+    height: calc(874px * 0.62);
+    overflow: hidden;
+  }
+  .frame-scale > div {
+    transform: scale(0.62);
+    transform-origin: top left;
+  }
+  .frame-label {
+    font-family: var(--font-body); font-size: 11px; font-weight: 700;
+    color: var(--gogo-aubergine); text-transform: uppercase; letter-spacing: 0.10em;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .frame-num {
+    font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+    color: var(--gogo-magenta); letter-spacing: 0.04em;
+  }
+</style>
+</head>
+<body>
+  <div class="kit-header">
+    <div>
+      <h1 class="kit-title">APP<br/>UI KIT</h1>
+      <p class="kit-sub">Rider-facing app for the GOGO battery-swap network. Six core screens — onboarding through wallet — all anchored on the +/− charged/empty contrast.</p>
+    </div>
+    <div class="kit-meta">
+      <div><strong>6 screens</strong></div>
+      <div>iOS 26 · 402×874</div>
+      <div>scaled · 62%</div>
+    </div>
+  </div>
+  <div class="frames" id="root"></div>
+
+  <script type="text/babel" src="../app/ios-frame.jsx"></script>
+  <script type="text/babel" src="../app/components.jsx"></script>
+  <script type="text/babel" src="../app/screens.jsx"></script>
+  <script type="text/babel">
+    function Kit() {
+      const frames = [
+        { label: 'Welcome',    num: '01', el: <WelcomeScreen/> },
+        { label: 'Home',       num: '02', el: <HomeScreen/> },
+        { label: 'Stations',   num: '03', el: <MapScreen/> },
+        { label: 'Live swap',  num: '04', el: <ChargingScreen/> },
+        { label: 'History',    num: '05', el: <HistoryScreen/> },
+        { label: 'Wallet',     num: '06', el: <WalletScreen/> },
+      ];
+      return (
+        <>
+          {frames.map((f, i) => (
+            <div className="frame-wrap" key={i}>
+              <div className="frame-scale"><IOSDevice>{f.el}</IOSDevice></div>
+              <div className="frame-label">
+                <span className="frame-num">{f.num}</span>
+                {f.label}
+              </div>
+            </div>
+          ))}
+        </>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<Kit/>);
+  </script>
+</body>
+</html>

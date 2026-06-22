@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GOGO Rider — Home</title>
+<link rel="stylesheet" href="rider.css">
+<style>
+  .map {
+    position: relative;
+    flex: 1;
+    background:
+      radial-gradient(circle at 30% 40%, #F2EAF0 0, transparent 38%),
+      radial-gradient(circle at 80% 70%, #ECE7EC 0, transparent 40%),
+      #F7F2F5;
+    overflow: hidden;
+    min-height: 280px;
+  }
+  /* fake streets */
+  .map::before, .map::after {
+    content:""; position:absolute; background: #E1D6DE;
+  }
+  .map::before { left: -10%; right: -10%; top: 38%; height: 18px; transform: rotate(-6deg); }
+  .map::after  { top: -10%; bottom: -10%; left: 60%; width: 14px; transform: rotate(8deg); }
+  .road2 { position:absolute; left:-10%; right:-10%; top: 70%; height: 10px; background: #E1D6DE; transform: rotate(4deg); }
+  .road3 { position:absolute; top:-10%; bottom:-10%; left: 28%; width: 8px; background: #E1D6DE; transform: rotate(-3deg); }
+
+  .pin {
+    position: absolute;
+    width: 36px; height: 44px;
+    transform: translate(-50%, -100%);
+    filter: drop-shadow(0 2px 4px rgba(21,1,12,.2));
+  }
+  .pin.you {
+    width: 24px; height: 24px; background: var(--gogo-electric-rose); border: 3px solid #fff;
+    border-radius: 50%; box-shadow: 0 0 0 6px rgba(210,12,125,.18), 0 2px 6px rgba(21,1,12,.25);
+    transform: translate(-50%, -50%);
+  }
+
+  .sheet {
+    background: #fff;
+    border-radius: 24px 24px 0 0;
+    padding: 12px 20px 16px;
+    box-shadow: 0 -8px 24px rgba(21,1,12,.08);
+    margin-top: -24px;
+    position: relative;
+    z-index: 2;
+  }
+  .grabber { width: 44px; height: 4px; background: var(--gogo-ink-200); border-radius: 2px; margin: 4px auto 14px; }
+  .sheet h2 { font-family: var(--font-display); font-weight: 700; font-size: 22px; letter-spacing: -0.01em; margin: 0 0 14px; }
+
+  .station {
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    gap: 14px;
+    padding: 14px 0;
+    border-top: 1px solid var(--border-subtle);
+    align-items: center;
+  }
+  .station:first-of-type { border-top: 0 }
+  .station-ico {
+    width: 48px; height: 48px; border-radius: 12px;
+    background: var(--gogo-ink-100);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .station-ico svg { width: 26px; color: var(--gogo-purple-eclipse) }
+  .station-name { font-family: var(--font-display); font-weight: 700; font-size: 16px; }
+  .station-meta { font-size: 12px; color: var(--fg-muted); margin-top: 2px; }
+  .station-dist { font-family: var(--font-mono); font-size: 13px; color: var(--fg); text-align: right; font-weight: 600 }
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 999px;
+    background: rgba(31,138,76,.12); color: #1F8A4C;
+  }
+  .pill.low { background: rgba(247,181,0,.18); color: #8a6200 }
+  .pill::before { content:""; width:5px; height:5px; border-radius:50%; background: currentColor; }
+
+  .swap-cta {
+    margin: 14px 0 6px;
+  }
+</style>
+</head>
+<body>
+<div class="phone" data-screen-label="Home / Map">
+  <div class="status-bar">
+    <span>9:41</span>
+    <span class="status-icons">
+      <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><path d="M1 9h2v3H1zM5 6h2v6H5zM9 3h2v9H9zM13 0h2v12h-2z"/></svg>
+      <svg width="22" height="12" viewBox="0 0 22 12" fill="currentColor"><rect x=".5" y="2.5" width="18" height="7" rx="2" stroke="currentColor" fill="none"/><rect x="2" y="4" width="14" height="4" rx="1"/><rect x="19" y="4.5" width="2" height="3" rx="1"/></svg>
+    </span>
+  </div>
+  <div class="top-bar">
+    <img class="logo" src="../../assets/logo-full-colour.png" alt="GOGO">
+    <div class="avatar">JM</div>
+  </div>
+
+  <div class="map">
+    <div class="road2"></div>
+    <div class="road3"></div>
+    <!-- Stations -->
+    <img class="pin" src="../../assets/bolt-pin.svg" alt="" style="left: 22%; top: 30%;">
+    <img class="pin" src="../../assets/bolt-pin.svg" alt="" style="left: 64%; top: 25%;">
+    <img class="pin" src="../../assets/bolt-pin.svg" alt="" style="left: 48%; top: 58%;">
+    <img class="pin" src="../../assets/bolt-pin.svg" alt="" style="left: 78%; top: 70%;">
+    <!-- You -->
+    <div class="pin you" style="left: 50%; top: 50%;"></div>
+  </div>
+
+  <div class="sheet">
+    <div class="grabber"></div>
+    <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:8px">
+      <span class="eyebrow">Nearby stations</span>
+      <span style="font-size:12px;color:var(--fg-muted)">4 within 2 km</span>
+    </div>
+    <h2>Swap a battery</h2>
+
+    <a class="station" href="swap-reserve.html" style="text-decoration:none;color:inherit">
+      <div class="station-ico"><svg viewBox="0 0 24 32" fill="currentColor"><path d="M14.4 0 0 17.6h8.8L6.4 32 24 12.8h-9.6L17.6 0z"/></svg></div>
+      <div>
+        <div class="station-name">Kabalagala</div>
+        <div class="station-meta"><span class="pill">14 ready</span> &nbsp; Open until 22:00</div>
+      </div>
+      <div class="station-dist">1.2 km</div>
+    </a>
+
+    <div class="station">
+      <div class="station-ico"><svg viewBox="0 0 24 32" fill="currentColor"><path d="M14.4 0 0 17.6h8.8L6.4 32 24 12.8h-9.6L17.6 0z"/></svg></div>
+      <div>
+        <div class="station-name">Ntinda Road</div>
+        <div class="station-meta"><span class="pill low">3 ready</span> &nbsp; Open until 23:00</div>
+      </div>
+      <div class="station-dist">1.8 km</div>
+    </div>
+
+    <div class="station">
+      <div class="station-ico"><svg viewBox="0 0 24 32" fill="currentColor"><path d="M14.4 0 0 17.6h8.8L6.4 32 24 12.8h-9.6L17.6 0z"/></svg></div>
+      <div>
+        <div class="station-name">Nakawa Market</div>
+        <div class="station-meta"><span class="pill">11 ready</span> &nbsp; Open 24h</div>
+      </div>
+      <div class="station-dist">2.0 km</div>
+    </div>
+
+    <a class="btn btn-primary swap-cta" href="swap-reserve.html">Reserve at Kabalagala →</a>
+  </div>
+
+  <nav class="tab-bar">
+    <a class="tab on" href="home-map.html">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M9 20H4v-8H1L12 2l11 10h-3v8h-5v-6H9v6z"/></svg></span>Home
+    </a>
+    <a class="tab" href="swap-reserve.html">
+      <span class="ico"><svg viewBox="0 0 24 32" fill="currentColor" width="20" height="26"><path d="M14.4 0 0 17.6h8.8L6.4 32 24 12.8h-9.6L17.6 0z"/></svg></span>Swap
+    </a>
+    <a class="tab" href="wallet.html">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M3 6a3 3 0 013-3h12v3H6a1 1 0 000 2h13v10a3 3 0 01-3 3H6a3 3 0 01-3-3V6zm14 6a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg></span>Wallet
+    </a>
+    <a class="tab" href="profile.html">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-4.4 0-8 2.7-8 6v2h16v-2c0-3.3-3.6-6-8-6z"/></svg></span>Profile
+    </a>
+  </nav>
+</div>
+</body></html>

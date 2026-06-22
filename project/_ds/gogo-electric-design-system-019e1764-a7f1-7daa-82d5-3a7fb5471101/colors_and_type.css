@@ -1,0 +1,215 @@
+/* ============================================================
+   GOGO Electric — Foundation tokens
+   Mundial (primary). Red Hat Display (fallback / web-safe).
+   ============================================================ */
+
+/* --- Mundial (preview-only — licensed copies required for production) --- */
+@font-face { font-family: "Mundial"; src: url("./fonts/MundialHair.otf") format("opentype"); font-weight: 100; font-style: normal; font-display: swap; }
+@font-face { font-family: "Mundial"; src: url("./fonts/MundialHairItalic.otf") format("opentype"); font-weight: 100; font-style: italic; font-display: swap; }
+@font-face { font-family: "Mundial"; src: url("./fonts/MundialThin.otf") format("opentype"); font-weight: 200; font-style: normal; font-display: swap; }
+@font-face { font-family: "Mundial"; src: url("./fonts/MundialThinItalic.otf") format("opentype"); font-weight: 200; font-style: italic; font-display: swap; }
+@font-face { font-family: "Mundial"; src: url("./fonts/MundialLight.otf") format("opentype"); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: "Mundial"; src: url("./fonts/MundialLightItalic.otf") format("opentype"); font-weight: 300; font-style: italic; font-display: swap; }
+@font-face { font-family: "Mundial"; src: url("./fonts/MundialRegular.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Mundial"; src: url("./fonts/MundialItalic.otf") format("opentype"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Mundial"; src: url("./fonts/MundialDemibold.otf") format("opentype"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Mundial"; src: url("./fonts/MundialDemiboldItalic.otf") format("opentype"); font-weight: 600; font-style: italic; font-display: swap; }
+@font-face { font-family: "Mundial"; src: url("./fonts/MundialBold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Mundial"; src: url("./fonts/MundialBoldItalic.otf") format("opentype"); font-weight: 700; font-style: italic; font-display: swap; }
+@font-face { font-family: "Mundial"; src: url("./fonts/MundialBlack.otf") format("opentype"); font-weight: 900; font-style: normal; font-display: swap; }
+
+/* Red Hat Display — alternate per brand book. Loaded as fallback / web safe. */
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  /* ---------- PRIMARY PALETTE ---------- */
+  --gogo-purple-eclipse: #40103C;    /* primary */
+  --gogo-electric-rose:  #D20C7D;    /* primary */
+
+  /* ---------- ACCENT PALETTE (sparingly, never as solid bg) ---------- */
+  --gogo-energetic-orange: #DE5307;
+  --gogo-buzzing-yellow:   #F7B500;
+  --gogo-turbo-red:        #BB1E10;
+
+  /* ---------- NEUTRALS (from brand book) ---------- */
+  --gogo-ink-900: #15010C;   /* near-black, warm */
+  --gogo-ink-800: #1A0618;
+  --gogo-mauve-700: #664063; /* muted purple-grey for secondary text */
+  --gogo-mauve-100: #ECE7EC; /* lightest neutral, backgrounds */
+  --gogo-white: #FFFFFF;
+  --gogo-black: #000000;
+
+  /* Extended neutral ramp (derived, harmonised with Purple Eclipse) */
+  --gogo-ink-50:  #FAF6F9;
+  --gogo-ink-100: #ECE7EC;
+  --gogo-ink-200: #D8CFD7;
+  --gogo-ink-300: #B6A6B3;
+  --gogo-ink-400: #8A7588;
+  --gogo-ink-500: #664063;
+  --gogo-ink-600: #4A2A48;
+  --gogo-ink-700: #40103C;
+  --gogo-ink-800: #2A0826;
+  --gogo-ink-900: #15010C;
+
+  /* Electric-Rose tints, for hover/active states */
+  --gogo-rose-50:  #FEEDF5;
+  --gogo-rose-100: #FBD1E5;
+  --gogo-rose-300: #EE6FB1;
+  --gogo-rose-500: #D20C7D;
+  --gogo-rose-600: #B40769;
+  --gogo-rose-700: #8E0552;
+
+  /* ---------- SEMANTIC ---------- */
+  --bg:           var(--gogo-white);
+  --bg-subtle:    var(--gogo-ink-50);
+  --bg-elevated:  var(--gogo-white);
+  --bg-inverse:   var(--gogo-purple-eclipse);
+
+  --fg:           var(--gogo-ink-900);
+  --fg-muted:     var(--gogo-ink-500);
+  --fg-subtle:    var(--gogo-ink-400);
+  --fg-inverse:   var(--gogo-white);
+  --fg-brand:     var(--gogo-purple-eclipse);
+  --fg-accent:    var(--gogo-electric-rose);
+
+  --border:       var(--gogo-ink-200);
+  --border-subtle:var(--gogo-ink-100);
+  --border-strong:var(--gogo-ink-900);
+
+  --action:        var(--gogo-electric-rose);
+  --action-hover:  var(--gogo-rose-600);
+  --action-active: var(--gogo-rose-700);
+  --action-fg:     var(--gogo-white);
+
+  --success: #1F8A4C;
+  --warning: var(--gogo-buzzing-yellow);
+  --danger:  var(--gogo-turbo-red);
+  --info:    var(--gogo-electric-rose);
+
+  /* ---------- TYPE ---------- */
+  --font-display: "Mundial", "Red Hat Display", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:    "Mundial", "Red Hat Display", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Type scale — clean, bold; tightened tracking on display */
+  --fs-display-xl: 96px;   --lh-display-xl: 0.94; --tr-display-xl: -0.025em;
+  --fs-display-l:  72px;   --lh-display-l:  0.96; --tr-display-l:  -0.022em;
+  --fs-display-m:  56px;   --lh-display-m:  1.00; --tr-display-m:  -0.02em;
+  --fs-h1:         44px;   --lh-h1:         1.05; --tr-h1:         -0.015em;
+  --fs-h2:         32px;   --lh-h2:         1.10; --tr-h2:         -0.01em;
+  --fs-h3:         24px;   --lh-h3:         1.20; --tr-h3:         -0.005em;
+  --fs-h4:         20px;   --lh-h4:         1.25; --tr-h4:          0;
+  --fs-body-l:     18px;   --lh-body-l:     1.55; --tr-body-l:      0;
+  --fs-body:       16px;   --lh-body:       1.55; --tr-body:        0;
+  --fs-body-s:     14px;   --lh-body-s:     1.50; --tr-body-s:      0;
+  --fs-caption:    12px;   --lh-caption:    1.40; --tr-caption:     0.01em;
+  --fs-eyebrow:    12px;   --lh-eyebrow:    1.20; --tr-eyebrow:     0.16em; /* ALL CAPS micro */
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;       /* Red Hat Display only */
+  --fw-demibold: 600;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  /* ---------- SPACING (4px base) ---------- */
+  --s-0: 0;
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --s-20: 80px;
+  --s-24: 96px;
+  --s-32: 128px;
+
+  /* ---------- RADII ---------- */
+  /* Logo letterforms are circular → we lean to fully-rounded pills for interactive,
+     small radius for cards. Squares are also valid (modern/minimal). */
+  --r-none: 0;
+  --r-xs:  4px;
+  --r-sm:  8px;
+  --r-md:  12px;
+  --r-lg:  16px;
+  --r-xl:  24px;
+  --r-pill: 999px;
+
+  /* ---------- SHADOWS / ELEVATION ---------- */
+  /* Restrained. The brand is minimal — shadow is for elevation, not flair.
+     Shadows are tinted with Purple Eclipse so they harmonise on warm whites. */
+  --shadow-0: none;
+  --shadow-1: 0 1px 2px rgba(21,1,12,0.06), 0 1px 1px rgba(21,1,12,0.04);
+  --shadow-2: 0 2px 4px rgba(21,1,12,0.06), 0 4px 12px rgba(21,1,12,0.06);
+  --shadow-3: 0 8px 16px rgba(21,1,12,0.08), 0 2px 4px rgba(21,1,12,0.06);
+  --shadow-4: 0 16px 32px rgba(21,1,12,0.10), 0 4px 8px rgba(21,1,12,0.06);
+  --shadow-focus: 0 0 0 3px rgba(210,12,125,0.35);
+
+  /* ---------- MOTION ---------- */
+  --ease-out:  cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-snap: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast:   120ms;
+  --dur-base:   200ms;
+  --dur-slow:   320ms;
+
+  /* ---------- LAYOUT ---------- */
+  --container-sm: 640px;
+  --container-md: 960px;
+  --container-lg: 1200px;
+  --container-xl: 1440px;
+}
+
+/* ============================================================
+   BASE ELEMENT STYLES
+   Applying foundations to semantic elements.
+   ============================================================ */
+
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  color: var(--fg);
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--fs-h1); line-height: var(--lh-h1); letter-spacing: var(--tr-h1); }
+h2 { font-size: var(--fs-h2); line-height: var(--lh-h2); letter-spacing: var(--tr-h2); }
+h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); letter-spacing: var(--tr-h3); }
+h4 { font-size: var(--fs-h4); line-height: var(--lh-h4); letter-spacing: var(--tr-h4); }
+
+p  { margin: 0; text-wrap: pretty; }
+
+.eyebrow {
+  font-size: var(--fs-eyebrow);
+  line-height: var(--lh-eyebrow);
+  letter-spacing: var(--tr-eyebrow);
+  text-transform: uppercase;
+  font-weight: var(--fw-bold);
+  color: var(--gogo-electric-rose);
+}
+
+.display-xl { font-family: var(--font-display); font-weight: var(--fw-black); font-size: var(--fs-display-xl); line-height: var(--lh-display-xl); letter-spacing: var(--tr-display-xl); }
+.display-l  { font-family: var(--font-display); font-weight: var(--fw-bold);  font-size: var(--fs-display-l);  line-height: var(--lh-display-l);  letter-spacing: var(--tr-display-l); }
+.display-m  { font-family: var(--font-display); font-weight: var(--fw-bold);  font-size: var(--fs-display-m);  line-height: var(--lh-display-m);  letter-spacing: var(--tr-display-m); }
+
+code, pre, .mono { font-family: var(--font-mono); font-size: 0.95em; }
+a { color: var(--gogo-electric-rose); text-decoration: none; }
+a:hover { color: var(--gogo-rose-600); text-decoration: underline; }
+
+::selection { background: var(--gogo-electric-rose); color: var(--gogo-white); }

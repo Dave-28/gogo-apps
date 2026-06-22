@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Badges" subtitle="Status, brand, outline" viewport="700x110" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  body { padding: 26px 28px; display:flex; align-items:center; gap: 12px; flex-wrap: wrap }
+  .badge { font-family: var(--font-display); font-weight: 700; font-size: 12px; padding: 4px 10px; border-radius: 999px; letter-spacing: 0.02em; display:inline-flex; align-items:center; gap: 6px }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor }
+  .b-available { background: rgba(31,138,76,.12); color: #1F8A4C }
+  .b-low       { background: rgba(247,181,0,.18); color: #8a6200 }
+  .b-offline   { background: rgba(187,30,16,.12); color: var(--gogo-turbo-red) }
+  .b-brand     { background: var(--gogo-purple-eclipse); color: #fff }
+  .b-rose      { background: var(--gogo-electric-rose); color: #fff }
+  .b-outline   { background: transparent; color: var(--fg); box-shadow: inset 0 0 0 1.5px var(--fg) }
+</style>
+</head>
+<body>
+  <span class="badge b-available"><span class="dot"></span>Available</span>
+  <span class="badge b-low"><span class="dot"></span>Low stock</span>
+  <span class="badge b-offline"><span class="dot"></span>Offline</span>
+  <span class="badge b-brand">E-Boda</span>
+  <span class="badge b-rose">New</span>
+  <span class="badge b-outline">Pro plan</span>
+</body></html>

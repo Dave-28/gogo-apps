@@ -1,0 +1,100 @@
+/* Shared styles for the GOGO Rider App prototype screens */
+@import url("../../colors_and_type.css");
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--gogo-ink-100); height: 100%; }
+body { font-family: var(--font-body); color: var(--fg); -webkit-font-smoothing: antialiased; }
+
+.phone {
+  width: 390px;
+  min-height: 844px;
+  background: #fff;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Status bar */
+.status-bar {
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--fg);
+  flex-shrink: 0;
+}
+.status-icons { display:flex; gap: 6px; align-items:center }
+
+/* Top bar */
+.top-bar {
+  padding: 8px 20px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.top-bar .logo { height: 22px }
+.top-bar .avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--gogo-purple-eclipse);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 700; font-size: 14px;
+}
+
+/* Bottom tab bar */
+.tab-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--border-subtle);
+  background: #fff;
+  padding: 10px 4px 24px;
+  flex-shrink: 0;
+}
+.tab {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  font-size: 11px; font-weight: 600; color: var(--fg-muted);
+  text-decoration: none;
+  padding: 4px;
+}
+.tab .ico { width: 24px; height: 24px; display:flex; align-items:center; justify-content:center }
+.tab.on { color: var(--gogo-electric-rose); }
+
+/* Reusable buttons */
+.btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  border: 0;
+  border-radius: 999px;
+  padding: 16px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  transition: all var(--dur-base) var(--ease-out);
+  text-decoration: none;
+  width: 100%;
+}
+.btn-primary { background: var(--gogo-electric-rose); color: #fff }
+.btn-primary:hover { background: #B40769 }
+.btn-secondary { background: var(--gogo-purple-eclipse); color: #fff }
+.btn-ghost { background: transparent; color: var(--fg); box-shadow: inset 0 0 0 2px var(--fg) }
+
+/* Eyebrow / label */
+.eyebrow { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gogo-electric-rose); font-weight: 700 }
+
+/* Card */
+.card {
+  background: #fff;
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+/* Scrollable content */
+.content { flex: 1; overflow-y: auto; }

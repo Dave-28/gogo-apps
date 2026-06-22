@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- @dsCard group="UI Kit — Battery Maintenance" name="Battery Maintenance App" subtitle="Battery tech — pack queue, pack detail, disposition" viewport="1300x800" -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GOGO · Battery Maintenance</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="../kit.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <a href="../index.html" class="kit-back">← All apps</a>
+
+  <div class="kit-header">
+    <div>
+      <div class="kit-eyebrow">05 · OPS</div>
+      <h1 class="kit-title">BATTERY<br/>MAINTENANCE</h1>
+      <p class="kit-sub">Pack-care app for battery technicians. Triage flagged packs, drill into cell-level health, and decide between rebalance, repair, or retire.</p>
+    </div>
+    <div class="kit-meta">
+      <div><strong>3 screens</strong></div>
+      <div>iOS 26 · 402×874</div>
+      <div>scaled · 62%</div>
+    </div>
+  </div>
+
+  <div class="frames" id="root"></div>
+
+  <script type="text/babel" src="../app/ios-frame.jsx"></script>
+  <script type="text/babel" src="../app/components.jsx"></script>
+  <script type="text/babel" src="./screens.jsx"></script>
+  <script type="text/babel">
+    function Kit() {
+      const frames = [
+        { num: '01', label: 'Pack queue',    el: <PackQueueScreen/> },
+        { num: '02', label: 'Pack detail',   el: <PackDetailScreen/> },
+        { num: '03', label: 'Disposition',   el: <DispositionScreen/> },
+      ];
+      return frames.map((f, i) => (
+        <div className="frame-wrap" key={i}>
+          <div className="frame-scale"><IOSDevice>{f.el}</IOSDevice></div>
+          <div className="frame-label"><span className="frame-num">{f.num}</span>{f.label}</div>
+        </div>
+      ));
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<Kit/>);
+  </script>
+</body>
+</html>

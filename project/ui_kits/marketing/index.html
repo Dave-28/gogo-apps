@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- @dsCard group="UI Kit — Marketing" name="Marketing Site" subtitle="Landing page with hero, stats, and live charge card" viewport="1180x820" -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GOGO · Marketing Site</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  body { margin: 0; padding: 32px; background: var(--aub-50); display: flex; justify-content: center; }
+  .kit-title {
+    width: 1100px; margin-bottom: 20px;
+    font-family: var(--font-display); font-variation-settings: 'wght' 800, 'wdth' 110;
+    font-weight: 800; font-size: 28px; color: var(--gogo-aubergine);
+    text-transform: uppercase; letter-spacing: -0.02em;
+    display: flex; align-items: baseline; gap: 16px;
+  }
+  .kit-title small {
+    font-family: var(--font-body); font-size: 12px; font-weight: 600;
+    color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .stack { display: flex; flex-direction: column; align-items: center; }
+</style>
+</head>
+<body>
+  <div class="stack">
+    <div class="kit-title">GOGO MARKETING <small>landing page · browser frame</small></div>
+    <div id="root"></div>
+  </div>
+
+  <script type="text/babel" src="./browser-window.jsx"></script>
+  <script type="text/babel" src="./site.jsx"></script>
+  <script type="text/babel">
+    function Kit() {
+      return (
+        <ChromeWindow
+          tabs={[{ title: 'GOGO — Go anywhere.', active: true }, { title: 'Charging map' }]}
+          activeIndex={0}
+          url="gogo.app"
+          width={1100} height={1480}
+        >
+          <SiteHero/>
+        </ChromeWindow>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<Kit/>);
+  </script>
+</body>
+</html>

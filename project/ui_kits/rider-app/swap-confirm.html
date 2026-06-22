@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- @dsCard group="UI Kit — Rider App" name="Rider App — Confirmed" subtitle="Reservation held on brand surface" viewport="390x920" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GOGO Rider — Swap confirmed</title>
+<link rel="stylesheet" href="rider.css">
+<style>
+  .phone { background: var(--gogo-purple-eclipse); color:#fff }
+  .status-bar { color:#fff }
+  .center { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding: 24px 32px; position:relative; overflow:hidden }
+  .ring { width: 160px; height: 160px; border-radius:50%; background: rgba(210,12,125,.18); display:flex; align-items:center; justify-content:center; margin-bottom: 28px }
+  .ring .inner { width: 112px; height: 112px; border-radius:50%; background: var(--gogo-electric-rose); display:flex; align-items:center; justify-content:center }
+  .ring svg { width: 56px; color: #fff }
+  h1 { font-family: var(--font-display); font-weight: 900; font-size: 40px; letter-spacing: -0.02em; margin: 0 0 10px; line-height: 1; color: #fff }
+  .lead { color: rgba(255,255,255,.78); font-size: 16px; line-height: 1.5; max-width: 260px }
+  .deck { background: rgba(255,255,255,.06); border-radius: 16px; padding: 18px; margin-top: 28px; width: 100%; }
+  .row { display:flex; justify-content:space-between; padding: 8px 0; }
+  .row .l { color: rgba(255,255,255,.6); font-size: 13px }
+  .row .v { font-family: var(--font-display); font-weight: 700; font-size: 14px; color: #fff }
+  .footer { padding: 0 24px 32px; }
+  .footer .btn-primary { background:#fff; color: var(--gogo-purple-eclipse) }
+  .footer .btn-ghost  { color:#fff; box-shadow: inset 0 0 0 2px rgba(255,255,255,.4) }
+  .timer { font-family: var(--font-display); font-weight: 700; font-size: 13px; color: var(--gogo-electric-rose); margin-top: 16px; letter-spacing: .04em }
+</style>
+</head>
+<body>
+<div class="phone" data-screen-label="Swap / Confirmed">
+  <div class="status-bar"><span>9:43</span></div>
+  <div class="center">
+    <div class="ring"><div class="inner">
+      <svg viewBox="0 0 24 32" fill="currentColor"><path d="M14.4 0 0 17.6h8.8L6.4 32 24 12.8h-9.6L17.6 0z"/></svg>
+    </div></div>
+    <span class="eyebrow">Reserved</span>
+    <h1>You're set.</h1>
+    <p class="lead">Battery #B-4128 is locked for you at Kabalagala. Show this screen at the counter.</p>
+    <div class="timer">⏱ HELD FOR 14:32</div>
+    <div class="deck">
+      <div class="row"><span class="l">Station</span><span class="v">Kabalagala</span></div>
+      <div class="row"><span class="l">Battery</span><span class="v">72 V · 40 Ah</span></div>
+      <div class="row"><span class="l">Code</span><span class="v">B-4128</span></div>
+      <div class="row"><span class="l">Pay on swap</span><span class="v">UGX 6,000</span></div>
+    </div>
+  </div>
+  <div class="footer">
+    <a class="btn btn-primary" href="home-map.html">Get directions</a>
+    <a class="btn btn-ghost" href="home-map.html" style="margin-top:10px">Cancel reservation</a>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Spacing" name="Radii" subtitle="From square to pill — pills echo the logomark" viewport="700x180" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  body { padding: 24px 28px; display:grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+  .col { display:flex; flex-direction:column; align-items:center; gap: 8px }
+  .tile { width: 72px; height: 72px; background: var(--gogo-purple-eclipse); }
+  .name { font-family: var(--font-mono); font-size: 11px; color: var(--fg-muted) }
+  .val  { font-family: var(--font-display); font-weight: 700; font-size: 14px; color: var(--fg) }
+</style>
+</head>
+<body>
+  <div class="col"><div class="tile" style="border-radius:0"></div><div class="val">none</div><div class="name">0</div></div>
+  <div class="col"><div class="tile" style="border-radius:4px"></div><div class="val">xs</div><div class="name">4 px</div></div>
+  <div class="col"><div class="tile" style="border-radius:8px"></div><div class="val">sm</div><div class="name">8 px</div></div>
+  <div class="col"><div class="tile" style="border-radius:12px"></div><div class="val">md</div><div class="name">12 px</div></div>
+  <div class="col"><div class="tile" style="border-radius:16px"></div><div class="val">lg</div><div class="name">16 px</div></div>
+  <div class="col"><div class="tile" style="border-radius:999px"></div><div class="val">pill</div><div class="name">∞</div></div>
+</body></html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Buttons" subtitle="Primary / secondary / ghost / tertiary" viewport="700x140" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: #FAF6F9; }
+  body { padding: 28px; display:flex; align-items:center; gap: 22px; flex-wrap: wrap }
+  .btn { font-family: var(--font-display); font-weight: 700; font-size: 15px; border-radius: 999px; border: 0; padding: 14px 24px; cursor: pointer; transition: all var(--dur-base) var(--ease-out); display:inline-flex; align-items:center; gap: 10px; }
+  .btn-primary { background: var(--gogo-electric-rose); color: #fff; }
+  .btn-primary:hover { background: #B40769 }
+  .btn-secondary { background: var(--gogo-purple-eclipse); color: #fff; }
+  .btn-ghost { background: transparent; color: var(--fg); box-shadow: inset 0 0 0 2px var(--fg) }
+  .btn-tertiary { background: transparent; color: var(--fg); padding: 14px 8px; }
+  .btn-tertiary:hover { color: var(--gogo-electric-rose) }
+  .arrow { width: 8px; height: 8px; border-top: 2px solid currentColor; border-right: 2px solid currentColor; transform: rotate(45deg) }
+</style>
+</head>
+<body>
+  <button class="btn btn-primary">Swap now <span class="arrow"></span></button>
+  <button class="btn btn-secondary">Find a station</button>
+  <button class="btn btn-ghost">Cancel</button>
+  <button class="btn btn-tertiary">Learn more →</button>
+</body></html>

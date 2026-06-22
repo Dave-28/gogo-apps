@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- @dsCard group="UI Kit — Ops Dashboard" name="Ops Dashboard — Station detail" subtitle="Live slot grid + swap log" viewport="1440x900" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GOGO Ops — Station ST-014</title>
+<link rel="stylesheet" href="ops.css">
+<style>
+  .slot-grid { display:grid; grid-template-columns: repeat(10, 1fr); gap: 8px }
+  .slot { aspect-ratio: 1/1; border-radius: 10px; display:flex; align-items:center; justify-content:center; font-family: var(--font-display); font-weight: 700; font-size: 12px; background: var(--gogo-ink-100); color: var(--fg-muted) }
+  .slot.full { background: rgba(31,138,76,.18); color: #14633A }
+  .slot.charging { background: rgba(247,181,0,.22); color: #7A5500 }
+  .slot.empty { background: var(--gogo-ink-100); color: var(--fg-subtle) }
+  .slot.faulty { background: rgba(187,30,16,.18); color: var(--gogo-turbo-red) }
+  .legend { display:flex; gap: 16px; font-size: 12px; color: var(--fg-muted); margin-top: 16px }
+  .legend span::before { content:""; width:8px; height:8px; border-radius:2px; display:inline-block; margin-right:6px; vertical-align: middle }
+</style>
+</head>
+<body>
+<div class="app" data-screen-label="Ops / Station detail">
+  <aside class="side">
+    <div class="logo"><img src="../../assets/logo-inverse.png" alt="GOGO"></div>
+    <div class="group">Operations</div>
+    <a href="index.html"><span class="ico">▦</span>Overview</a>
+    <a class="on" href="stations.html"><span class="ico">⚡</span>Stations</a>
+    <a href="#"><span class="ico">🛵</span>Fleet</a>
+    <a href="riders.html"><span class="ico">👤</span>Riders</a>
+    <div class="group">Finance</div>
+    <a href="#"><span class="ico">💳</span>Billing</a>
+    <a href="#"><span class="ico">📊</span>Reports</a>
+    <div class="user">
+      <div class="av">AK</div>
+      <div><div class="name">Aisha K.</div><div class="role">Ops Manager</div></div>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="head">
+      <div>
+        <div style="font-size:13px;color:var(--fg-muted)"><a href="stations.html" style="color:var(--fg-muted)">Stations</a> / ST-014</div>
+        <h1>Kabalagala</h1>
+        <div class="sub">Kampala · 4 William St · open 06:00–22:00</div>
+      </div>
+      <div class="actions">
+        <button class="btn btn-ghost">Service log</button>
+        <button class="btn btn-primary">Mark for maintenance</button>
+      </div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="lbl">Ready</div><div class="v">14<small style="font-size:18px;color:var(--fg-muted);font-weight:700">/20</small></div></div>
+      <div class="kpi"><div class="lbl">Charging</div><div class="v">4</div></div>
+      <div class="kpi"><div class="lbl">Swaps today</div><div class="v">312</div><div class="delta">▲ 6% vs avg</div></div>
+      <div class="kpi"><div class="lbl">Uptime · 30 days</div><div class="v">99.4%</div></div>
+    </div>
+
+    <div class="stack-2">
+      <div class="panel">
+        <div class="panel-head"><h2>Battery slots</h2><span style="font-size:12px;color:var(--fg-muted)">Live · refreshes every 4 s</span></div>
+        <div class="panel-body">
+          <div class="slot-grid">
+            <div class="slot full">B-01</div><div class="slot full">B-02</div><div class="slot full">B-03</div><div class="slot full">B-04</div><div class="slot full">B-05</div>
+            <div class="slot charging">B-06</div><div class="slot full">B-07</div><div class="slot full">B-08</div><div class="slot full">B-09</div><div class="slot full">B-10</div>
+            <div class="slot full">B-11</div><div class="slot full">B-12</div><div class="slot full">B-13</div><div class="slot full">B-14</div><div class="slot charging">B-15</div>
+            <div class="slot empty">B-16</div><div class="slot charging">B-17</div><div class="slot empty">B-18</div><div class="slot faulty">B-19</div><div class="slot charging">B-20</div>
+          </div>
+          <div class="legend">
+            <span style="color:#14633A"><span style="background:#1F8A4C"></span>Ready (14)</span>
+            <span style="color:#7A5500"><span style="background:#F7B500"></span>Charging (4)</span>
+            <span style="color:var(--fg-subtle)"><span style="background:#B6A6B3"></span>Empty (2)</span>
+            <span style="color:var(--gogo-turbo-red)"><span style="background:#BB1E10"></span>Faulty (1)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><h2>Recent swaps</h2></div>
+        <div class="panel-body">
+          <div class="event"><div class="dot" style="background:#1F8A4C"></div><div><div class="title">John Mukasa · B-4087</div><div class="time">2 min ago · UGX 6,000</div></div></div>
+          <div class="event"><div class="dot" style="background:#1F8A4C"></div><div><div class="title">Sarah Nakato · B-4076</div><div class="time">8 min ago · UGX 6,000</div></div></div>
+          <div class="event"><div class="dot" style="background:#1F8A4C"></div><div><div class="title">Peter Okello · B-4061</div><div class="time">14 min ago · UGX 6,000</div></div></div>
+          <div class="event"><div class="dot" style="background:#1F8A4C"></div><div><div class="title">Grace Atim · B-4055</div><div class="time">21 min ago · UGX 6,000</div></div></div>
+          <div class="event"><div class="dot" style="background:var(--gogo-buzzing-yellow)"></div><div><div class="title">B-19 flagged faulty</div><div class="time">2h 14m ago · technician notified</div></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body></html>

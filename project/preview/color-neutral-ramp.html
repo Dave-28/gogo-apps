@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Colors" name="Color — Ink ramp" subtitle="Warm neutral scale, drawn from Purple Eclipse" viewport="700x160" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  body { padding: 22px 28px }
+  .ramp { display:grid; grid-template-columns: repeat(9, 1fr); gap: 0; border-radius: 10px; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(21,1,12,.06); }
+  .step { aspect-ratio: 1 / 1; display:flex; flex-direction: column; justify-content:flex-end; padding: 8px; font-family: var(--font-mono); font-size: 10px; }
+  .label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-muted); font-weight: 700; margin-bottom: 10px }
+  .name { font-family: var(--font-display); font-weight: 700; color: var(--fg); }
+</style>
+</head>
+<body>
+  <div class="label">Ink — neutrals (warm, drawn from Purple Eclipse)</div>
+  <div class="ramp">
+    <div class="step" style="background:#FAF6F9; color: var(--fg)">50</div>
+    <div class="step" style="background:#ECE7EC; color: var(--fg)">100</div>
+    <div class="step" style="background:#D8CFD7; color: var(--fg)">200</div>
+    <div class="step" style="background:#B6A6B3; color: var(--fg)">300</div>
+    <div class="step" style="background:#8A7588; color: #fff">400</div>
+    <div class="step" style="background:#664063; color: #fff">500</div>
+    <div class="step" style="background:#4A2A48; color: #fff">600</div>
+    <div class="step" style="background:#40103C; color: #fff">700</div>
+    <div class="step" style="background:#15010C; color: #fff">900</div>
+  </div>
+</body></html>
